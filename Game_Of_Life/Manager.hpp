@@ -1,10 +1,8 @@
 #pragma once
 
 #include <vector>
-#include <algorithm>
 
-#include "Predator.hpp"
-#include "Prey.hpp"
+class Animal;
 
 class Manager
 {

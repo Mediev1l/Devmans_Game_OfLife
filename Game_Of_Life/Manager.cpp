@@ -1,5 +1,8 @@
 #include "Manager.hpp"
 
+#include "Predator.hpp"
+#include "Prey.hpp"
+
 Manager::Manager()
 	: Manager(10, 10, 50)
 {
