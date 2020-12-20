@@ -1,0 +1,4 @@
+﻿  Manager.cpp
+C:\Users\Asus\source\repos\Game_Of_Life\Game_Of_Life\Manager.cpp(14,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Asus\source\repos\Game_Of_Life\Game_Of_Life\Manager.cpp(97,20): warning C4018: '<': signed/unsigned mismatch
+  Game_Of_Life.vcxproj -> C:\Users\Asus\source\repos\Game_Of_Life\Debug\Game_Of_Life.exe
