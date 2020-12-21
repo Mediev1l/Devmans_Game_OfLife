@@ -3,7 +3,7 @@
 int Animal::AnimalCount = 0;
 
 Animal::Animal()
-	: Animal("Unnamed Animal", Vec2i{ 0,0 })
+	: Animal("Unnamed Animal", 0, 0)
 {
 }
 
@@ -12,22 +12,27 @@ Animal::~Animal()
 }
 
 Animal::Animal(const std::string& name)
-	: Animal(name, Vec2i{ 0,0 })
+	: Animal(name, 0, 0)
 {
 }
 
-Animal::Animal(const std::string& name, const Vec2i& coords)
+Animal::Animal(const std::string& name, int x, int y)
 	: Name(name)
 	, Aggresive(false)
-	, Coords(coords)
+	, PosX(x)
+	, PosY(y)
 	, Id(0)
 	, Breed(false)
 {
 
 	if (rand() % 2 == 0)
+	{
 		Gender = GenderType::MALE;
+	}
 	else
+	{
 		Gender = GenderType::FEMALE;
+	}
 
 	Id = AnimalCount;
 
@@ -36,29 +41,29 @@ Animal::Animal(const std::string& name, const Vec2i& coords)
 
 void Animal::MoveUp()
 {
-	Coords._y--;
+	PosY--;
 }
 
 void Animal::MoveDown()
 {
-	Coords._y++;
+	PosY++;
 }
 
 void Animal::MoveLeft()
 {
-	Coords._x--;
+	PosX--;
 }
 
 void Animal::MoveRight()
 {
-	Coords._y++;
+	PosX++;
 }
 
 
 void Animal::Print()
 {
 	auto gender = Gender == GenderType::MALE ?  "Male" : "Female";
-	std::cout << "| " << Name << " | " << gender << " X: " << Coords._x << " Y: " << Coords._y << " |\n";
+	std::cout << "| " << Name << " | " << gender << " X: " << getX() << " Y: " << getY() << " |\n";
 }
 
 void Animal::setGender(GenderType gender)
@@ -71,9 +76,10 @@ void Animal::setName(const std::string& name)
 	Name = name;
 }
 
-void Animal::setCoords(const Vec2i& coords)
+void Animal::setCoords(int x, int y)
 {
-	Coords = coords;
+	PosX = x;
+	PosY = y;
 }
 
 void Animal::setBreed(bool value)
@@ -86,14 +92,19 @@ GenderType Animal::getGender()
 	return Gender;
 }
 
-const std::string Animal::getName() const
+const std::string& Animal::getName() const
 {
 	return Name;
 }
 
-const Vec2i Animal::getCoords() const
+const int Animal::getX() const
 {
-	return Coords;
+	return PosX;
+}
+
+const int Animal::getY() const
+{
+	return PosY;
 }
 
 bool Animal::getBreed()

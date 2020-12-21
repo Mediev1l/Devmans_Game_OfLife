@@ -9,7 +9,7 @@ Predator::Predator()
 
 Predator::Predator(int x, int y)
 	: TurnsAlive(0)
-	, Animal("Predator", Vec2i(x,y))
+	, Animal("Predator", x, y)
 {
 	Aggresive = true;
 	PredatorsCount++;
@@ -23,7 +23,7 @@ Predator::~Predator()
 
 void Predator::Action(const Animal& animal)
 {
-	std::cout << Name << " fighting with " << animal.getName() << " at " << getCoords()._x << ' ' << getCoords()._y << '\n';
+	std::cout << Name << " fighting with " << animal.getName() << " at " << getX() << ' ' << getY() << '\n';
 }
 
 void Predator::Eat()

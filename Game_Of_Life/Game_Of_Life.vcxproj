@@ -150,7 +150,6 @@
     <ClInclude Include="Manager.hpp" />
     <ClInclude Include="Predator.hpp" />
     <ClInclude Include="Prey.hpp" />
-    <ClInclude Include="Vec2.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

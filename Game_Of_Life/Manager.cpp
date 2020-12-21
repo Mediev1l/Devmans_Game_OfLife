@@ -63,7 +63,9 @@ void Manager::RemoveAnimal(Animal* animal)
 void Manager::ShowAnimals()
 {
 	for (auto& animal : Animals)
+	{
 		animal->Print();
+	}
 }
 
 void Manager::PredatorEats(int id)
@@ -94,7 +96,9 @@ void Manager::PredatorHunger()
 	{
 		auto temp = dynamic_cast<Predator*>(predator);
 		if (temp)
+		{
 			temp->Hungry();
+		}
 	}
 
 	for (int i = 0; i < Animals.size();)
@@ -158,19 +162,19 @@ void Manager::MakeMoves()
 		switch (direction)
 		{
 		case 0:
-			if (animal->getCoords()._y > 0)
+			if (animal->getY() > 0)
 				animal->MoveUp();
 			break;
 		case 1:
-			if (animal->getCoords()._y < Height - 1)
+			if (animal->getY() < Height - 1)
 				animal->MoveDown();
 			break;
 		case 2:
-			if (animal->getCoords()._x > 0)
+			if (animal->getX()> 0)
 				animal->MoveLeft();
 			break;
 		case 3:
-			if (animal->getCoords()._x < Width - 1)
+			if (animal->getX() < Width - 1)
 				animal->MoveRight();
 			break;
 		default:
@@ -190,8 +194,8 @@ void Manager::CheckSimulation()
 			auto tempA1 = AnimalCopy[i];
 			auto tempA2 = AnimalCopy[j];
 
-			if (i != j && tempA1->getCoords()._x == tempA2->getCoords()._x
-				&& tempA1->getCoords()._y == tempA2->getCoords()._y)
+			if (i != j && tempA1->getX() == tempA2->getX()
+				&& tempA1->getY() == tempA2->getY())
 			{
 
 				//Two predators met Male & Female

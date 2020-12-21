@@ -1,12 +1,11 @@
 #pragma once
 
-#include "Vec2.hpp"
 #include <iostream>
 #include <random>
 
 enum class GenderType { MALE = 0, FEMALE = 1 };
 
-class Animal : public Vec2i
+class Animal
 {
 private:
 	static int AnimalCount;
@@ -14,7 +13,8 @@ private:
 protected:
 	GenderType Gender;
 	std::string Name;
-	Vec2i Coords;
+	int PosX;
+	int PosY;
 
 	bool Aggresive;
 	bool Breed;
@@ -22,7 +22,7 @@ public:
 	Animal();
 	virtual ~Animal();
 	Animal(const std::string& name);
-	Animal(const std::string& name, const Vec2i& coords);
+	Animal(const std::string& name, int x, int y);
 
 	virtual void MoveUp();
 	virtual void MoveDown();
@@ -35,12 +35,13 @@ public:
 
 	void setGender(GenderType gender);
 	void setName(const std::string& name);
-	void setCoords(const Vec2i& coords);
+	void setCoords(int x, int y);
 	void setBreed(bool value);
 
 	GenderType getGender();
-	const std::string getName() const;
-	const Vec2i getCoords() const;
+	const std::string& getName() const;
+	const int getX() const;
+	const int getY() const;
 	bool getBreed();
 	bool isAggresive();
 	int getId() const;

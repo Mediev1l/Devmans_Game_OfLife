@@ -32,9 +32,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Vec2.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Animal.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
