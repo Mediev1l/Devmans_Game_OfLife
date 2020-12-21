@@ -1,9 +1,8 @@
 #pragma once
 
 #include <iostream>
-#include <random>
 
-enum class GenderType { MALE = 0, FEMALE = 1 };
+enum class GenderType : char { MALE = 'M', FEMALE = 'F' };
 
 class Animal
 {
